@@ -1,0 +1,25 @@
+[project]
+name = "tokyo-travel"
+version = "0.1.0"
+description = "도쿄 여행 지출 분석 프로그램"
+
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "msoffcrypto-tool>=5.0",
+    "openpyxl>=3.1",
+    "pandas>=2.0",
+    "python-dotenv>=1.0",
+    "requests>=2.31",
+    "rich>=13.0",
+]
+
+[project.scripts]
+tokyo-travel = "expense_tracker.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["expense_tracker"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
